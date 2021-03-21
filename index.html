@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" v-cloak>
         <v-app>
             <v-sheet>
                 <v-content>
@@ -183,76 +183,6 @@
                                     </div>
                                 </v-col>
                             </v-row>
-
-                            <!-- <v-col data-aos="fade-right" cols="12" md="6"
-                                class="d-flex justify-center align-center pa-4">
-                                <v-avatar class="elevation-12 ma-4" size="128">
-                                    <v-img src="alessandro.jpg"></v-img>
-                                </v-avatar>
-                                <div class="text-left align-self-center">
-                                    <p><span class="font-weight-bold">Alessandro Martinelli</span> – Produttore
-                                        esecutivo
-                                    </p>
-                                    <p class="font-italic">“Voglio tornare a respirare”
-                                    </p>
-                                </div>
-                            </v-col>
-                            <v-col data-aos="fade-left" cols="12" md="6"
-                                class="d-flex justify-center align-center  pa-4">
-                                <div class="text-right align-self-center">
-                                    <p><span class="font-weight-bold">Valentina Giupponi</span> – Regia</p>
-                                    <p class="font-italic">“Raccontaci le tue emozioni”</p>
-                                </div>
-                                <v-avatar class="elevation-12 ma-4 " size="128">
-                                    <v-img src="Valentina.jpg"></v-img>
-                                </v-avatar>
-                            </v-col>
-
-                            <v-col data-aos="fade-right" class="d-flex justify-center align-center pa-4" cols="12"
-                                md="6">
-                                <v-avatar class="elevation-12 ma-4" size="128">
-                                    <v-img src="alessandra.jpeg"></v-img>
-                                </v-avatar>
-                                <div class="text-right align-self-center">
-                                    <p><span class="font-weight-bold">Alessandra Albertini</span> – Montaggio</p>
-                                    <p class="font-italic">Lorem ipsum dolor sit ng elit. Cras orci enim
-                                    </p>
-                                </div>
-
-                            </v-col>
-                            <v-col data-aos="fade-left" class="d-flex justify-center align-center  pa-4" cols="12"
-                                md="6">
-                                <v-avatar class="elevation-12 ma-4" size="128">
-                                    <v-img src="marina.jpg"></v-img>
-                                </v-avatar>
-                                <div class="text-left align-self-center">
-                                    <p><span class="font-weight-bold">Marina Stojmenova</span> – Web designer</p>
-                                    <p class="font-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    </p>
-                                </div>
-                            </v-col>
-
-                            <v-col data-aos="fade-right" cols="12" md="6"
-                                class="d-flex justify-center align-center  pa-4">
-                                <v-avatar class="elevation-12 ma-4" size="128">
-                                    <v-img src="valerio.jpg"></v-img>
-                                </v-avatar>
-                                <div class="text-left align-self-center">
-                                    <p><span class="font-weight-bold">Valerio Magnago</span> - Cuoco</p>
-                                    <p class="font-italic">"Si lavora meglio a pancia piena."</p>
-                                </div>
-                            </v-col>
-                            <v-col data-aos="fade-left" cols="12" md="6"
-                                class="d-flex justify-center align-center  pa-4">
-                                <div class="text-right align-self-center">
-                                    <p><span class="font-weight-bold">Giacomo Vianello</span> – Grafico</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                </div>
-                                <v-avatar class="elevation-12 ma-4" size="128">
-                                    <v-img src="avatar1.jpg"></v-img>
-                                </v-avatar>
-                            </v-col>
-                            </v-row> -->
                         </v-container>
                         <div class="py-12"></div>
                     </section>
@@ -304,12 +234,10 @@
                 return {
                     video: 5,
                     isMobile: false,
-
                 }
             },
             computed: {
                 items() {
-                    console.log('isMobile?', this.isMobile);
                     return [
                         {
                             id: 0,
@@ -370,13 +298,11 @@
             },
             beforeDestroy() {
                 if (typeof window === 'undefined') return
-
                 window.removeEventListener('resize', this.onResize, { passive: true })
             },
 
             mounted() {
                 this.onResize()
-
                 window.addEventListener('resize', this.onResize, { passive: true })
             },
 

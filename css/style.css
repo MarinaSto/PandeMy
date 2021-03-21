@@ -22,3 +22,5 @@ p a .send-video-link:hover{
      border-radius: 12px;
      margin: 0;  
 }
+
+[v-cloak] { display: none; }
