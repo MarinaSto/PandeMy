@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="logo_quadrato.png">
+    <link rel="shortcut icon" href="images/logo_quadrato.png">
 
 </head>
 
@@ -63,7 +63,8 @@
                                                     video
                                                 </p>
                                                 <v-btn x-large color="#690d99" data-aos="fade-right"
-                                                    class=" px-12 white--text align-self-center mb-6" @click="">
+                                                    class=" px-12 white--text align-self-center mb-6"
+                                                    @click="openWeTransfer()">
                                                     <span class="ma-4">Carica</span>
                                                     <v-icon class="ml-4" right size="28" dark>
                                                         mdi-cloud-upload
@@ -308,8 +309,9 @@
             },
 
             methods: {
-                isLeft() {
-                    return true;
+                openWeTransfer() {
+                    let win = window.open('https://pandemyfilm.wetransfer.com/', '_blank');
+                    win.focus();
                 },
                 onResize() {
                     this.isMobile = window.innerWidth < 600
