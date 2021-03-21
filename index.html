@@ -24,20 +24,21 @@
                     <!-- <v-icon x-large class="pink--text">mdi-spin mdi-loading</v-icon> -->
                     <section id="home">
                         <v-theme-provider dark>
-                            <v-container fill-height class="pa-0 pa-md-2">
+                            <v-container fill-height class="pa-0 pa-md-2" :style="isMobile?'':'max-height: 100vh;'">
                                 <v-row align="center" class="white mx-auto" justify="center">
                                     <v-col class="white--text text-center pa-0" cols="12" md="6" tag="h1">
-                                        <v-img data-aos="fade-right" src="images/backgound.jpg" max-height="100vh"
-                                            max-width="100vw" aspect-ratio="1">
+                                        <v-img data-aos="fade-right" src="images/backgound.jpg" max-width="100vw"
+                                            aspect-ratio="1">
                                         </v-img>
                                     </v-col>
                                     <v-col class="pa-2 pa-md-12" cols="12" md="6" tag="h1" data-aos="fade-down">
-                                        <v-img src="images/title_full.png" max-width="95vw" class="justfy-center">
+                                        <v-img src="images/title_full.png" style="max-width:95vw; max-height:30vh"
+                                            class="justfy-center">
                                         </v-img>
                                         <p class="font-weight-thin mt-12">Il film documentario che racconta la pandemia
                                             e che sarà una testimonianza per il futuro.
                                         </p>
-                                        <video style="max-width:100%" controls autoplay>
+                                        <video id="vid" style="max-width:100%; max-height:30vh" controls autoplay>
                                             <source src="video/spotPandemy.mp4" type="video/mp4">
                                             <!-- <source src="movie.ogg" type="video/ogg"> -->
                                             Your browser does not support the video tag.
