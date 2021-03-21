@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PandeMy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Aos link -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="logo_quadrato.png">
+
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-sheet>
+                <v-content>
+                    <!-- <v-icon x-large class="pink--text">mdi-spin mdi-loading</v-icon> -->
+                    <section id="home">
+                        <v-theme-provider dark>
+                            <v-container fill-height class="pa-0 pa-md-2">
+                                <v-row align="center" class="white mx-auto" justify="center">
+                                    <v-col class="white--text text-center pa-0" cols="12" md="6" tag="h1">
+                                        <v-img data-aos="fade-right" src="images/backgound.jpg" max-height="100vh"
+                                            max-width="100vw" aspect-ratio="1">
+                                        </v-img>
+                                    </v-col>
+                                    <v-col class="pa-2 pa-md-12" cols="12" md="6" tag="h1" data-aos="fade-down">
+                                        <v-img src="images/title_full.png" max-width="95vw" class="justfy-center">
+                                        </v-img>
+                                        <p class="font-weight-thin mt-12">Il film documentario che racconta la pandemia
+                                            e che sarà una testimonianza per il futuro.
+                                        </p>
+                                        <p class="font-weight-thin">Vuoi diventare protagonista anche tu?
+                                        </p>
+                                        <p class="font-weight-regular display-1"> <a class="text-decoration-none"
+                                                href="#core"><span style="color:black" class="send-video-link">Inviaci i
+                                                    tuoi
+                                                    video</span></a>, <span class="font-weight-light">hai tempo fino
+                                                all’</span><span>12 aprile.</span>
+                                        </p>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </v-theme-provider>
+                    </section>
+                    <section id="core" class="grey lighten-5">
+                        <v-theme-provider dark>
+                            <v-container fill-height>
+                                <v-row class="mt-12">
+                                    <v-col data-aos="fade-right" class="pa-16" cols="12" md="6" tag="h1">
+                                        <v-img src="images/logo_no-pay.png"></v-img>
+                                        <v-row class="mt-2">
+                                            <v-col cols="12" md="7" class="d-flex flex-column pt-6">
+                                                <p class="font-weight-normal title mt-12 mb-0 text-center">Carica i tuoi
+                                                    video
+                                                </p>
+                                                <v-btn x-large color="#690d99" data-aos="fade-right"
+                                                    class=" px-12 white--text align-self-center mb-6" @click="">
+                                                    <span class="ma-4">Carica</span>
+                                                    <v-icon class="ml-4" right size="28" dark>
+                                                        mdi-cloud-upload
+                                                    </v-icon>
+                                                </v-btn>
+                                                <p class="font-weight-normal ma-0 mt-12 text-center body-1">Abbiamo
+                                                    raccolto il {{video}}% dei video</p>
+                                                <v-progress-linear :value="video" color="#7a1b83" height="25" rounded>
+                                                </v-progress-linear>
+                                            </v-col>
+                                            <v-col cols="12" md="5">
+                                                <v-img src="images/smartphone.png" class="mt-n4"></v-img>
+                                                <p class="font-weight-normal ma-0 text-center body-1">Registra in
+                                                    orizzontale e con una qualità di 1080P</p>
+                                            </v-col>
+                                        </v-row>
+                                    </v-col>
+                                    <v-col cols="12" md="6" data-aos="fade-down" tag="h1">
+                                        <h2 class="font-weight-medium">Cosa devi fare per partecipare?
+                                        </h2>
+                                        <p class="font-weight-thin">Semplice! Scegli un giorno della settimana e
+                                            raccontaci la tua giornata tramite un qualunque dispositivo in
+                                            grado di registrare.</p>
+                                        <p class="font-weight-thin">Ci interessano le tue <span
+                                                class="font-weight-light"
+                                                style="font-size: 30px;background:#680d9907">emozioni</span>, i tuoi
+                                            <span class="font-weight-light"
+                                                style="font-size: 30px;background:#680d9907">sentimenti</span>, i
+                                            tuoi <span class="font-weight-light"
+                                                style="font-size: 30px;background:#680d9907">pensieri</span>.
+                                        </p>
+
+                                        <p class="font-weight-thin">Registrati mentre parli e poi riprendi ciò che
+                                            vedi, ciò che fai.</p>
+
+                                        <p class="font-weight-thin">Vogliamo conoscere i tuoi stati d’animo, le tue
+                                            paure, le difficoltà che stai incontrando in questi giorni difficili e che
+                                            idea ti sei fatto sul futuro. Cosa rappresenta per te il Coronavirus, come
+                                            ti ha cambiato, le abitudini che ti mancano o magari quello che invece hai
+                                            riscoperto.</p>
+
+                                        <p class="font-weight-thin">Fai dei <span class="font-weight-light">video
+                                                non troppo lunghi</span>, da pochi
+                                            secondi a qualche minuto. Ed effettua le <span
+                                                class="font-weight-light">riprese in orizzontale</span>.</p>
+                                        <p class="font-weight-thin">Inoltre ricorda che ci serve il permesso di
+                                            utilizzare il tuo materiale, quindi tramite un ulteriore video dovrai
+                                            dare il tuo consenso dicendo:</p>
+                                        <p style="background:#680d9907"
+                                            class="font-weight-thin font-italic text--secondary">“Io, <span
+                                                class="font-weight-regular">nome e cognome </span>. Nato a <span
+                                                class="font-weight-regular">luogo di nascita</span> il
+                                            <span class="font-weight-regular">data di nascita</span> residente in
+                                            <span class="font-weight-regular">indirizzo di residenza</span>,
+                                            acconsento all'utilizzo dei video da me registrati il <span
+                                                class="font-weight-regular">data registrazione
+                                                video</span>, per la realizzazione del filmdocumentario PandeMy."
+                                        </p>
+
+                                        <p class="font-weight-thin">Conclusi i tuoi racconti, spedisci il materiale
+                                            con il tasto qui a fianco!
+                                        </p>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </v-theme-provider>
+                    </section>
+                    <section id="core2" class="">
+                        <v-theme-provider dark>
+                            <v-container fill-height class="pa-0 pa-md-12">
+                                <v-row align="center" class=" mx-auto" justify="center">
+                                    <v-col class="pa-md-12" cols="12" tag="h1">
+                                        <div class="pa-ms-12" data-aos="fade-down">
+                                            <h2 class="font-weight-medium">Come nasce l’idea?
+                                            </h2>
+                                            <p class="font-weight-thin">PandeMY è un film-documentario che ha la
+                                                finalità di raccontare la vita degli italiani durante i giorni di
+                                                pandemia affinché un domani i nostri posteri siano in possesso di una
+                                                testimonianza su come è stato
+                                                affrontato questo particolare momento. </p>
+                                            <p class="font-weight-thin">Il film si basa sulla raccolta di video-diari
+                                                tenuti dalle singole persone che raccontano la loro giornata tipo. </p>
+
+                                            <p class="font-weight-thin">Una valvola di sfogo per i nostri concittadini
+                                                che liberano sentimenti ed emozioni facendoci vivere le varie
+                                                sfaccettature di questo momento dell’esistenza umana e l’incertezza del
+                                                presente e del futuro.</p>
+                                        </div>
+                                    </v-col>
+                                </v-row>
+                            </v-container>
+                        </v-theme-provider>
+                    </section>
+                    <section id="about" class="grey lighten-5">
+                        <div class="py-12"></div>
+                        <v-container class="text-center" style="overflow-x: hidden;">
+                            <h2 data-aos="fade-down" class="display-2 font-weight-bold mb-3">CHI SIAMO</h2>
+                            <v-row>
+
+                                <v-col v-for="item in items" :key="item.id" :data-aos="item.aos" cols="12" md="6"
+                                    class="d-flex justify-center align-center pa-4">
+                                    <div v-if="item.is_left">
+                                        <v-avatar class="elevation-12 ma-4" size="128">
+                                            <v-img :src="item.image"></v-img>
+                                        </v-avatar>
+                                    </div>
+                                    <div class=" text-left align-self-center">
+                                        <p><span class="font-weight-bold">{{item.name}}</span> – {{ item.role
+                                            }}
+                                        </p>
+                                        <p class="font-italic"> “{{item.message}}”
+                                        </p>
+                                    </div>
+                                    <div v-if="!item.is_left">
+                                        <v-avatar class="elevation-12 ma-4" size="128">
+                                            <v-img :src="item.image"></v-img>
+                                        </v-avatar>
+                                    </div>
+                                </v-col>
+                            </v-row>
+
+                            <!-- <v-col data-aos="fade-right" cols="12" md="6"
+                                class="d-flex justify-center align-center pa-4">
+                                <v-avatar class="elevation-12 ma-4" size="128">
+                                    <v-img src="alessandro.jpg"></v-img>
+                                </v-avatar>
+                                <div class="text-left align-self-center">
+                                    <p><span class="font-weight-bold">Alessandro Martinelli</span> – Produttore
+                                        esecutivo
+                                    </p>
+                                    <p class="font-italic">“Voglio tornare a respirare”
+                                    </p>
+                                </div>
+                            </v-col>
+                            <v-col data-aos="fade-left" cols="12" md="6"
+                                class="d-flex justify-center align-center  pa-4">
+                                <div class="text-right align-self-center">
+                                    <p><span class="font-weight-bold">Valentina Giupponi</span> – Regia</p>
+                                    <p class="font-italic">“Raccontaci le tue emozioni”</p>
+                                </div>
+                                <v-avatar class="elevation-12 ma-4 " size="128">
+                                    <v-img src="Valentina.jpg"></v-img>
+                                </v-avatar>
+                            </v-col>
+
+                            <v-col data-aos="fade-right" class="d-flex justify-center align-center pa-4" cols="12"
+                                md="6">
+                                <v-avatar class="elevation-12 ma-4" size="128">
+                                    <v-img src="alessandra.jpeg"></v-img>
+                                </v-avatar>
+                                <div class="text-right align-self-center">
+                                    <p><span class="font-weight-bold">Alessandra Albertini</span> – Montaggio</p>
+                                    <p class="font-italic">Lorem ipsum dolor sit ng elit. Cras orci enim
+                                    </p>
+                                </div>
+
+                            </v-col>
+                            <v-col data-aos="fade-left" class="d-flex justify-center align-center  pa-4" cols="12"
+                                md="6">
+                                <v-avatar class="elevation-12 ma-4" size="128">
+                                    <v-img src="marina.jpg"></v-img>
+                                </v-avatar>
+                                <div class="text-left align-self-center">
+                                    <p><span class="font-weight-bold">Marina Stojmenova</span> – Web designer</p>
+                                    <p class="font-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    </p>
+                                </div>
+                            </v-col>
+
+                            <v-col data-aos="fade-right" cols="12" md="6"
+                                class="d-flex justify-center align-center  pa-4">
+                                <v-avatar class="elevation-12 ma-4" size="128">
+                                    <v-img src="valerio.jpg"></v-img>
+                                </v-avatar>
+                                <div class="text-left align-self-center">
+                                    <p><span class="font-weight-bold">Valerio Magnago</span> - Cuoco</p>
+                                    <p class="font-italic">"Si lavora meglio a pancia piena."</p>
+                                </div>
+                            </v-col>
+                            <v-col data-aos="fade-left" cols="12" md="6"
+                                class="d-flex justify-center align-center  pa-4">
+                                <div class="text-right align-self-center">
+                                    <p><span class="font-weight-bold">Giacomo Vianello</span> – Grafico</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                </div>
+                                <v-avatar class="elevation-12 ma-4" size="128">
+                                    <v-img src="avatar1.jpg"></v-img>
+                                </v-avatar>
+                            </v-col>
+                            </v-row> -->
+                        </v-container>
+                        <div class="py-12"></div>
+                    </section>
+
+                </v-content>
+            </v-sheet>
+            <v-footer class="flex-column justify-center" color="#292929" height="200">
+                <div>
+                    <a class="col-3 text-decoration-none" href="https://www.instagram.com/pandemyfilm/" target="_blank">
+                        <v-icon large class="social-link ma-2">mdi-instagram</v-icon>
+                    </a>
+
+                    <a class="col-3 text-decoration-none" href="https://www.facebook.com/PandeMy-102706921910909"
+                        target="_blank">
+                        <v-icon large class="social-link ma-2">mdi-facebook</v-icon>
+                    </a>
+
+                    <a class="col-3 text-decoration-none"
+                        href="https://www.youtube.com/channel/UCNlreP43ud11ABI-5lcv72A" target="_blank">
+                        <v-icon large class="social-link ma-2">mdi-youtube</v-icon>
+                    </a>
+
+                </div>
+                <a href="mailto:film@pandemyfilm.com"
+                    class="title text-decoration-none font-weight-light grey--text text--lighten-1 text-center ma-0"><span
+                        class="caption">E-mail: </span>film@pandemyfilm.com</a>
+                <div class="title font-weight-light grey--text text--lighten-1 text-center mt-2">
+                    &copy; {{ (new Date()).getFullYear() }} Fatto con 💜 da Marina e Valerio
+                </div>
+            </v-footer>
+        </v-app>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        window.addEventListener('load', AOS.refresh)
+        AOS.init({
+            offset: 120,
+            duration: 2000
+        });
+    </script>
+    <script>
+
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data() {
+                return {
+                    video: 5,
+                    isMobile: false,
+
+                }
+            },
+            computed: {
+                items() {
+                    console.log('isMobile?', this.isMobile);
+                    return [
+                        {
+                            id: 0,
+                            name: "Alessandro Martinelli",
+                            role: "Produttore esecutivo",
+                            message: "Voglio tornare a respirare",
+                            image: "images/alessandro.jpg",
+                            aos: "fade-right",
+                            is_left: true
+                        },
+                        {
+                            id: 1,
+                            name: "Valentina Giupponi",
+                            role: "Regia",
+                            message: "Raccontaci le tue emozioni",
+                            image: "images/Valentina.jpg",
+                            aos: "fade-left",
+                            is_left: false
+                        },
+                        {
+                            id: 2,
+                            name: "Alessandra Albertini",
+                            role: "Montaggio",
+                            message: "",
+                            image: "images/alessandra.jpeg",
+                            aos: "fade-right",
+                            is_left: this.isMobile ? true : false
+                        },
+                        {
+                            id: 3,
+                            name: "Marina Stojmenova",
+                            role: "Web designer",
+                            message: "Prossimo viaggio Puglia...speriamo",
+                            image: "images/marina.jpg",
+                            aos: "fade-left",
+                            is_left: this.isMobile ? false : true
+                        },
+                        {
+                            id: 4,
+                            name: "Valerio Magnago",
+                            role: "Cuoco",
+                            message: "Si lavora meglio a pancia piena",
+                            image: "images/valerio.jpg",
+                            aos: "fade-right",
+                            is_left: true
+                        },
+                        {
+                            id: 5,
+                            name: "Giacomo Vianello",
+                            role: "Grafico",
+                            message: "",
+                            image: "",
+                            aos: "fade-left",
+                            is_left: false
+                        },
+                    ]
+                }
+            },
+            beforeDestroy() {
+                if (typeof window === 'undefined') return
+
+                window.removeEventListener('resize', this.onResize, { passive: true })
+            },
+
+            mounted() {
+                this.onResize()
+
+                window.addEventListener('resize', this.onResize, { passive: true })
+            },
+
+            methods: {
+                isLeft() {
+                    return true;
+                },
+                onResize() {
+                    this.isMobile = window.innerWidth < 600
+                },
+            },
+        })
+
+    </script>
+</body>
+
+</html>

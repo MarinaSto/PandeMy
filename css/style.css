@@ -1,0 +1,24 @@
+
+footer div i{
+  font-size: 30px!important;
+  color: white!important;
+  font-weight: bold!important;
+  -webkit-transition: 1.5s;
+  -moz-transition: 1.5s;
+  -o-transition: 1.5s;
+  -ms-transition: lor 1.5s;
+  transition: 1.5s;
+}
+
+footer div i:hover{
+  color:#7e5c91 !important;
+}
+
+p a .send-video-link:hover{
+    color:#6c0b8a !important;
+  }
+
+.v-progress-linear{
+     border-radius: 12px;
+     margin: 0;  
+}
