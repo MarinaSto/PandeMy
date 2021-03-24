@@ -27,15 +27,17 @@
                             <v-container fill-height class="pa-0 pa-md-2" :style="isMobile?'':'max-height: 100vh;'">
                                 <v-row align="center" class="white mx-auto" justify="center">
                                     <v-col class="white--text text-center pa-0" cols="12" md="6" tag="h1">
-                                        <v-img data-aos="fade-right" src="images/backgound.jpg" max-width="100vw"
-                                            aspect-ratio="1">
+                                        <v-img data-aos="fade-right"
+                                            :src="isMobile?'images/backgound-mobile.jpg':'images/backgound.jpg'"
+                                            max-width="100vw" aspect-ratio="1">
                                         </v-img>
                                     </v-col>
-                                    <v-col class="pa-2 pa-md-12" cols="12" md="6" tag="h1" data-aos="fade-left">
-                                        <v-img src="images/title_full.png" style="max-width:95vw; max-height:30vh"
-                                            class="justfy-center">
+                                    <v-col class="pa-2 pa-md-12 text_format" cols="12" md="6" tag="h1"
+                                        data-aos="fade-left">
+                                        <v-img v-if="!isMobile" src="images/title_full.png"
+                                            style="max-width:95vw; max-height:30vh" class="justfy-center">
                                         </v-img>
-                                        <p class="font-weight-thin mt-12">Il film-documentario che racconta la pandemia
+                                        <p class="mt-2 mt-md-12">Il film-documentario che racconta la pandemia
                                             e che sarà una testimonianza per il futuro.
                                         </p>
                                         <video id="vid" style="max-width:100%; max-height:30vh" controls autoplay>
@@ -43,7 +45,7 @@
                                             <!-- <source src="movie.ogg" type="video/ogg"> -->
                                             Your browser does not support the video tag.
                                         </video>
-                                        <p class="font-weight-thin">Vuoi diventare protagonista anche tu?
+                                        <p class="mt-2">Vuoi diventare protagonista anche tu?
                                         </p>
                                         <p class="font-weight-regular display-1"> <a class="text-decoration-none"
                                                 href="#core"><span style="color:black"
@@ -88,19 +90,16 @@
                                             </v-col>
                                         </v-row>
                                     </v-col>
-                                    <v-col cols="12" md="6" data-aos="fade-left" tag="h1">
+                                    <v-col cols="12" md="6" data-aos="fade-left" class="text_format">
                                         <h2 class="font-weight-medium">Cosa devi fare per partecipare?
                                         </h2>
-                                        <p class="font-weight-thin">Semplice! Scegli un giorno della settimana e
+                                        <p>Semplice! Scegli un giorno della settimana e
                                             raccontaci la tua giornata tramite un qualunque dispositivo in
                                             grado di registrare.</p>
-                                        <p class="font-weight-thin">Ci interessano le tue <span
-                                                class="font-weight-light"
-                                                style="font-size: 30px;background:#680d9907">emozioni</span>, i tuoi
-                                            <span class="font-weight-light"
-                                                style="font-size: 30px;background:#680d9907">sentimenti</span>, i
-                                            tuoi <span class="font-weight-light"
-                                                style="font-size: 30px;background:#680d9907">pensieri</span>.
+                                        <p>Ci interessano le tue <span class="font-weight-light"
+                                                style="font-size: 20px;background:#680d9907">emozioni</span>, i tuoi
+                                            <span style="font-size: 20px;background:#680d9907">sentimenti</span>, i
+                                            tuoi <span style="font-size: 20px;background:#680d9907">pensieri</span>.
                                         </p>
 
                                         <p class="font-weight-thin">Registrati mentre parli e poi riprendi ciò che
@@ -143,8 +142,8 @@
                             <v-container fill-height class="pa-0 pa-md-12">
                                 <v-row align="center" class=" mx-auto" justify="center">
                                     <v-col class="pa-md-12" cols="12" tag="h1">
-                                        <div class="pa-ms-12" data-aos="fade-down">
-                                            <h2 class="font-weight-medium">Come nasce l’idea?
+                                        <div class="pa-md-12 text_format" data-aos="fade-down">
+                                            <h2 class="font-weight-medium my-4">Come nasce l’idea?
                                             </h2>
                                             <p class="font-weight-thin">PandeMY è un film-documentario che ha la
                                                 finalità di raccontare la vita degli italiani durante i giorni di
@@ -165,7 +164,6 @@
                         </v-theme-provider>
                     </section>
                     <section id="about" class="grey lighten-5">
-                        <div class="py-12"></div>
                         <v-container class="text-center" style="overflow-x: hidden;">
                             <h2 data-aos="fade-down" class="display-2 font-weight-bold mb-3">CHI SIAMO</h2>
                             <v-row>

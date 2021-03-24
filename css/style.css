@@ -9,7 +9,17 @@ footer div i{
   -ms-transition: lor 1.5s;
   transition: 1.5s;
 }
-
+.v-main__wrap.v-content__wrap{
+overflow: hidden;
+}
+.text_format{
+    font-size:calc(16px + (20 - 16) * ((100vw - 414px) / (1700 - 414)));
+    line-height: calc(22px + (26 - 22) * ((100vw - 414px) / (1700 - 414)));    font-weight: 300;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
 footer div i:hover{
   color:#7e5c91 !important;
 }
