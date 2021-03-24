@@ -16,7 +16,7 @@ overflow: hidden;
     font-size:calc(16px + (20 - 16) * ((100vw - 414px) / (1700 - 414)));
     line-height: calc(22px + (26 - 22) * ((100vw - 414px) / (1700 - 414)));    font-weight: 300;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 0.02em;
     text-transform: none;
 }
