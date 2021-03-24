@@ -20,8 +20,13 @@
     <div id="app" v-cloak>
         <v-app>
             <v-sheet>
-                <v-content>
-                    <!-- <v-icon x-large class="pink--text">mdi-spin mdi-loading</v-icon> -->
+                <v-content @scroll.passive="handleScroll">
+                    <v-btn @click="openWeTransfer()" data-aos="fade-down-left" v-if="fabButton&&isMobile" dark
+                        color="#6c0b8a" fab style="position: fixed;bottom: 8px;right: 8px;">
+                        <v-icon size="28" dark>
+                            mdi-cloud-upload
+                        </v-icon>
+                    </v-btn>
                     <section id="home">
                         <v-theme-provider dark>
                             <v-container fill-height class="pa-0 pa-md-2" :style="isMobile?'':'max-height: 100vh;'">
@@ -91,7 +96,7 @@
                                         </v-row>
                                     </v-col>
                                     <v-col cols="12" md="6" data-aos="fade-left" class="text_format">
-                                        <h2 class="font-weight-medium">Cosa devi fare per partecipare?
+                                        <h2 class="font-weight-medium mb-4">Cosa devi fare per partecipare?
                                         </h2>
                                         <p>Semplice! Scegli un giorno della settimana e
                                             raccontaci la tua giornata tramite un qualunque dispositivo in
@@ -241,6 +246,7 @@
                 return {
                     video: 3,
                     isMobile: false,
+                    fabButton: false,
                 }
             },
             computed: {
@@ -306,14 +312,19 @@
             beforeDestroy() {
                 if (typeof window === 'undefined') return
                 window.removeEventListener('resize', this.onResize, { passive: true })
+                window.removeEventListener('scroll', this.handleScroll);
             },
 
             mounted() {
                 this.onResize()
                 window.addEventListener('resize', this.onResize, { passive: true })
+                window.addEventListener('scroll', this.handleScroll);
             },
 
             methods: {
+                handleScroll(event) {
+                    event.target.documentElement.scrollTop > 100 ? this.fabButton = true : this.fabButton = false
+                },
                 openWeTransfer() {
                     let win = window.open('https://pandemyfilm.wetransfer.com/', '_blank');
                     win.focus();
