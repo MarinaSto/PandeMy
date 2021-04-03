@@ -37,10 +37,7 @@ p a .send-video-link:hover{
 .carousel{
     max-width: 880px;
 }
-.v-window__next, .v-window__prev{
-    background: rgba(0,0,0,.7);
-    top: 36%;
-}
+
 .theme--dark.v-btn--active:before, .theme--dark.v-btn--active:hover:before{
 opacity: .6;
 }
