@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/logo_quadrato.png">
-
+    <script type="text/javascript" src="/_scripts/youTubeApi.js"></script>
 </head>
 
 <body>
@@ -76,7 +76,7 @@
                                         <!-- <v-img src="images/logo_no-pay.png"></v-img> -->
                                         <v-row class="mt-8">
                                             <v-col cols="12" class="d-flex justify-center">
-                                                <video autoplay controls loop style="max-width:100%; max-height:30vh">
+                                                <video controls loop style="max-width:100%; max-height:30vh">
                                                     <source src="video/tutorialPandeMy.mp4" type="video/mp4">
                                                 </video>
                                             </v-col>
@@ -112,8 +112,8 @@
                                     <v-col cols="12" md="6" data-aos="fade-left" class="text_format">
                                         <h2 class="font-weight-medium mb-4">Cosa devi fare per partecipare?
                                         </h2>
-                                        <p>Semplice! Raccontaci la tua giornata e 
-                                            come stai vivendo questo periodo tramite un qualunque 
+                                        <p>Semplice! Raccontaci la tua giornata e
+                                            come stai vivendo questo periodo tramite un qualunque
                                             dispositivo in grado di registrare.</p>
                                         <p>Ci interessano le tue <span class="font-weight-bold"
                                                 :style="'font-size:'+isMobile? '20px':'25px'"
@@ -187,9 +187,10 @@
                                     </v-col>
                                     <v-col md="6" class="" cols="12" data-aos="fade-left"
                                         :style="isMobile?'':'padding:24px 100 24px 80px;padding-right:100px'">
-                                        <v-carousel class="carousel">
-                                            <v-carousel-item v-for="video in youtubeVideo" :key="video.id"
-                                                v-html="video.content">
+                                        <v-carousel class="carousel" style="max-width:53vh; max-height:30vh"
+                                            @change="setIdVideoYtVis($event)">
+                                            <v-carousel-item style="max-width:53vh; max-height:30vh"
+                                                v-for="video in youtubeVideo" :key="video.id" v-html="video.content">
                                             </v-carousel-item>
                                         </v-carousel>
                                     </v-col>
@@ -275,6 +276,7 @@
                     video: 5,
                     isMobile: false,
                     fabButton: false,
+                    idYtVideoVis: '',
                 }
             },
             computed: {
@@ -339,30 +341,50 @@
                 youtubeVideo() {
                     return [
                         {
-                            id: "1",
+                            id: "11",
                             title: "Al parco distanziati",
-                            content: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/WOj8etgUTCU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                            content: '<iframe v-if="11==idYtVideoVis" id="11" width="100%" height="100%" src="https://www.youtube.com/embed/WOj8etgUTCU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                         },
                         {
-                            id: "2",
+                            id: "12",
                             title: "La nonna ha fatto il vaccino",
-                            content: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/JzytfXrjh8k?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                            content: '<iframe v-if="12==idYtVideoVis" id="12" width="100%" height="100%" src="https://www.youtube.com/embed/JzytfXrjh8k?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                         },
                         {
-                            id: "3",
+                            id: "13",
                             title: "Mi sento fortunato",
-                            content: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dWC1WhWpavY?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                            content: '<iframe v-if="13==idYtVideoVis" id="13" width="100%" height="100%" src="https://www.youtube.com/embed/dWC1WhWpavY?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                         },
                         {
-                            id: "4",
+                            id: "14",
                             title: "Ci sei tu...",
-                            content: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Ez7d_UF8SIY?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                            content: '<iframe v-if="14==idYtVideoVis" id="14" width="100%" height="100%" src="https://www.youtube.com/embed/Ez7d_UF8SIY?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                         },
                         {
-                            id: "5",
+                            id: "15",
                             title: "Chi l'avrebbe mai detto...",
-                            content: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/oWUnmA1G5vU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                            content: '<iframe v-if="15==idYtVideoVis" id="15" width="100%" height="100%" src="https://www.youtube.com/embed/oWUnmA1G5vU?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
                         },
+                        {
+                            id: "16",
+                            title: "I vari impieghi delle mascherine",
+                            content: '<iframe v-if="16==idYtVideoVis" id="16" width="100%" height="100%"  src="https://www.youtube.com/embed/DRiDynny3Rs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                        },
+                        {
+                            id: "17",
+                            title: "Aggiornamenti",
+                            content: '<iframe v-if="17==idYtVideoVis" id="17" width="100%" height="100%" src="https://www.youtube.com/embed/ld3NeUd07y8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                        },
+                        {
+                            id: "18",
+                            title: "Rispettiamo le regole",
+                            content: '<iframe v-if="18==idYtVideoVis" id="18" width="100%" height="100%" src="https://www.youtube.com/embed/iLzN2OOL9Do" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+                        },
+                        // {
+                        //     id: "19",
+                        //     title: "",
+                        //     content: ''<iframe v-if="19==idYtVideoVis" id="19" width="100%" height="100%"....',
+                        // },
                     ]
                 }
             },
@@ -379,6 +401,22 @@
             },
 
             methods: {
+                setIdVideoYtVis(e) {
+                    console.log('---->', e);
+                    var iframe = document.getElementById(this.idYtVideoVis)
+                    if (iframe) {
+                        var iframeSrc = iframe.src;
+                        iframe.src = iframeSrc;
+                    }
+                    // if (this.idYtVideoVis != '') {
+                    //     ytplayer = document.getElementById(this.idYtVideoVis);
+                    //     console.log("*-", ytplayer)
+
+                    //     ytplayer.stop()
+                    // }
+                    setTimeout(() => { this.idYtVideoVis = this.youtubeVideo[e].id }, 500)
+                    console.log('---->', this.idYtVideoVis);
+                },
                 handleScroll(event) {
                     event.target.documentElement.scrollTop > 100 ? this.fabButton = true : this.fabButton = false
                 },
@@ -389,6 +427,7 @@
                 onResize() {
                     this.isMobile = window.innerWidth < 600
                 },
+
             },
         })
 
